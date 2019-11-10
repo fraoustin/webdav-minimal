@@ -1,0 +1,145 @@
+body {
+    font-family: Livvic;
+    color: rgb(17, 17, 17);
+}
+
+#original_fancyindex {
+    margin: auto;
+    width: calc(100% - 110px);
+}
+
+#list {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+@font-face{
+    font-family:icomoonauth;
+    src:url(font/icomoonauth.woff) format('woff');
+    font-weight:400;
+    font-style:normal
+}
+
+.icon-switch, .icon-cloud-upload, .icon-folder-plus, .icon-bin {
+    font-family: icomoonauth;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-switch:before {
+    content: "\e9b6";
+}
+
+.icon-cloud-upload:before {
+    content: "\e9c3";
+}
+
+.icon-folder-plus:before {
+    content: "\e931";
+}
+
+.icon-bin:before {
+    content: "\e9ac";
+}
+
+a.btn {
+    border: 1px solid #ccc;
+    background: white;
+    padding: .5rem 1rem;
+    margin: 0;
+    -webkit-border-radius: .25em;
+    -moz-border-radius: .25em;
+    border-radius: .25em;
+    text-decoration: none;
+    position: fixed;
+    right: 10px;
+}
+
+a.icon-cloud-upload {
+    bottom: 20px;
+}
+
+a.icon-folder-plus {
+    bottom: 70px;
+}
+
+a.icon-bin {
+    bottom: 120px;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+}
+
+#list tr td:nth-child(2), #list tr td:nth-child(3), #list th:nth-child(2), #list th:nth-child(3){
+    text-align: right;
+}
+
+#original_fancyindex::first-line {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    position: fixed;
+}
+
+#list {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+#list tr {
+    margin-top: 5px;
+}
+
+#list td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dir:before {
+    font-family: 'icomoonauth';
+    position: relative;
+    left: -5px;
+    content: "\e92f";
+}
+
+.file:before {
+    font-family: 'icomoonauth';
+    position: relative;
+    left: -5px;
+    content: "\e922";
+}
+
+.parent:before {
+    font-family: 'icomoonauth';
+    position: relative;
+    left: -5px;
+    content: "\e934";
+    color: lightgray;
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    #list tr td:nth-child(2), #list tr td:nth-child(3), #list th:nth-child(2), #list th:nth-child(3){
+        display: none
+    }
+}
