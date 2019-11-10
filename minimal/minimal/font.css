@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Livvic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Livvic'), local('Livvic-Regular'), url(./font/Livvic-Regular.ttf) format('truetype');
+}
