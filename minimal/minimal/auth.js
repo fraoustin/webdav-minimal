@@ -116,6 +116,9 @@ document.getElementById("list").querySelectorAll("th a[href='"+query+"']").forEa
   }
   elt.href = newquery
 })
+document.getElementById("list").querySelectorAll("a").forEach(elt => {
+  elt.removeAttribute("title")
+})
 
 document.getElementById("list").querySelectorAll("tbody tr td:nth-child(2)").forEach(elt => {
   if (elt.innerText != '-') {
