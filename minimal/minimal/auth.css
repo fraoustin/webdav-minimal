@@ -23,7 +23,7 @@ body {
     font-style:normal
 }
 
-.icon-switch, .icon-cloud-upload, .icon-folder-plus {
+.icon-switch, .icon-cloud-upload, .icon-folder-plus, .icon-bin {
     font-family: icomoonauth;
     speak: none;
     font-style: normal;
@@ -46,6 +46,10 @@ body {
     content: "\e931";
 }
 
+.icon-bin:before {
+    content: "\e9ac";
+}
+
 a.btn {
     border: 1px solid #ccc;
     background: white;
@@ -66,6 +70,11 @@ a.icon-cloud-upload {
 a.icon-folder-plus {
     bottom: 70px;
 }
+
+a.icon-bin {
+    bottom: 120px;
+}
+
 
 
 a {
@@ -115,6 +124,15 @@ a {
     left: -5px;
     content: "\e922";
 }
+
+.parent:before {
+    font-family: 'icomoonauth';
+    position: relative;
+    left: -5px;
+    content: "\e934";
+    color: lightgray;
+}
+
 
 
 

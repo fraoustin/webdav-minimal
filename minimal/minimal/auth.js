@@ -40,6 +40,7 @@ function getCookie(name) {
     }
     return null;
 }
+
 function eraseCookie(name) {   
     document.cookie = name+'=; Max-Age=-99999999;';  
 }
@@ -90,10 +91,34 @@ function FileConvertSize(aSize){
 	}
 }
 
+function bin(){
+  var url = window.location.protocol + '//' + window.location.host+window.location.pathname;
+  var fs = new WebDAV.Fs(url);
+  var name = prompt("Please enter name of element for delete", "Name");
+  document.querySelectorAll("td.dir a").forEach(elt => {
+    if (elt.innerText == name) {
+      console.log("del dir " + name)
+      fs.dir(name).rm()
+    }
+  })
+  document.querySelectorAll("td.file a").forEach(elt => {
+    if (elt.innerText == name) {
+      console.log("del file " + name)
+      fs.file(name).rm()
+    }
+  })
+  location.reload()
+}
+
 /* load page */
 document.querySelectorAll('#list tbody tr').forEach(elt => {
   if (elt.querySelectorAll("td")[1].innerText == '-') {
-    elt.querySelectorAll("td")[0].classList.add("dir")
+    elt.querySelectorAll("td")[0].getElementsByTagName("a")[0].innerText = elt.querySelectorAll("td")[0].getElementsByTagName("a")[0].innerText.replace("/","")
+    if (elt.querySelectorAll("td")[0].getElementsByTagName("a")[0].innerText == "Parent directory") {
+      elt.querySelectorAll("td")[0].classList.add("parent")
+    } else {
+     elt.querySelectorAll("td")[0].classList.add("dir")
+    }
   }else{
     elt.querySelectorAll("td")[0].classList.add("file")
   }
