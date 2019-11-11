@@ -49,7 +49,7 @@ function logOut(){
   setCookie("webDavLogin","ko")
   var xmlhttp = new XMLHttpRequest();
   url = window.location.protocol + '//' + window.location.host+window.location.pathname;
-  urllogin = "http://127.0.0.1:8080/" 
+  urllogin = url.substring(0, url.indexOf('/auth'))
   xmlhttp.open("GET", url.replace(/:\/\//, '://user:nopassword@'), true);
   xmlhttp.onreadystatechange=function() 
   {
