@@ -27,11 +27,12 @@ load when start image load file in
 - CONTAINER_TIMEZONE timezone of container
 - DAVUSER (default user)
 - DAVPASSWORD (default pass)
-- COLOR (default blue) for web ihm (blue, green, grey, greydark, orange, purple, red)
 
 ## Volume
 
 - /share
+
+note: check authorization on directory /share
 
 ## Port
 
