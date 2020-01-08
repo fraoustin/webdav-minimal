@@ -69,8 +69,12 @@ function upload(){
   var fs = new WebDAV.Fs(url);
   var reader = new FileReader();
   reader.onload = function(event) {
-    fs.file(document.getElementById("nameFile").files.item(0).name).write(event.target.result);
-    location.reload();
+    if(!document.getElementById("nameFile").files.item(0).name == false){
+      fs.file(document.getElementById("nameFile").files.item(0).name).write(event.target.result);
+      location.reload();
+    } else {
+      console.log("nameFile is null")
+    }
   };
   reader.readAsArrayBuffer(document.getElementById("nameFile").files[0]);
 }
@@ -79,8 +83,12 @@ function mkdir(){
   var url = window.location.protocol + '//' + window.location.host+window.location.pathname;
   var fs = new WebDAV.Fs(url);
   var dirName = prompt("Please enter name of new direction", "NewDir");
-  fs.dir(dirName+"/").mkdir();
-  location.reload()
+  if (!dirName == false){
+    fs.dir(dirName+"/").mkdir();
+    location.reload();
+  } else {
+    console.log("dirName is null")
+  };   
 }
 
 function FileConvertSize(aSize){
