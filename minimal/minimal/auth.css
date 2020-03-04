@@ -133,7 +133,25 @@ a {
     color: lightgray;
 }
 
+#list tr:hover td {
+    font-weight:bold
+} 
 
+#list tr:hover .icon-bin {
+    display: unset;
+}
+
+#list tr .icon-bin {
+    display:none;
+}
+
+#list tr td.bin {
+    min-width: 40px;
+}
+
+#del-btn {
+    display: none
+}
 
 
 
@@ -144,5 +162,8 @@ a {
     }
     #original_fancyindex {
         margin: 10px;
+    }
+    #del-btn {
+        display: unset;
     }
 }

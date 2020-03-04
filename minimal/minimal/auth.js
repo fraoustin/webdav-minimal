@@ -6,6 +6,15 @@ function encodeData(data) {
   }).join("&");
 }
 
+function htmlToElement(html) {
+    var template = document.createElement('template');
+    html = html.trim(); // Never return a text node of whitespace as the result
+    template.innerHTML = html;
+    return template.content.firstChild;
+}
+
+
+
 function params(param) {
 	var vars = {};
 	window.location.href.replace( location.hash, '' ).replace( 
@@ -79,7 +88,7 @@ function upload(){
   reader.readAsArrayBuffer(document.getElementById("nameFile").files[0]);
 }
 
-function mkdir(){
+function mkdir(dirName){
   var url = window.location.protocol + '//' + window.location.host+window.location.pathname;
   var fs = new WebDAV.Fs(url);
   var dirName = prompt("Please enter name of new direction", "NewDir");
@@ -99,10 +108,12 @@ function FileConvertSize(aSize){
 	}
 }
 
-function bin(){
+function bin(name){
   var url = window.location.protocol + '//' + window.location.host+window.location.pathname;
   var fs = new WebDAV.Fs(url);
-  var name = prompt("Please enter name of element for delete", "Name");
+  if (name == undefined){
+    var name = prompt("Please enter name of element for delete", "Name");
+  }
   document.querySelectorAll("td.dir a").forEach(elt => {
     if (elt.innerText == name) {
       console.log("del dir " + name)
@@ -115,7 +126,7 @@ function bin(){
       fs.file(name).rm()
     }
   })
-  location.reload()
+  //location.reload()
 }
 
 /* load page */
@@ -157,4 +168,8 @@ document.getElementById("list").querySelectorAll("tbody tr td:nth-child(2)").for
   if (elt.innerText != '-') {
     elt.innerText = FileConvertSize(elt.innerText)
   }
+})
+
+document.getElementById("list").querySelectorAll("tbody tr").forEach(elt => {
+  elt.append(htmlToElement('<td class="bin"><a class="icon-bin" onclick="bin(\'' + elt.querySelectorAll("td a")[0].innerText + '\'); return false;"></a></td>'))
 })
