@@ -126,7 +126,7 @@ function bin(name){
       fs.file(name).rm()
     }
   })
-  //location.reload()
+  location.reload()
 }
 
 /* load page */
