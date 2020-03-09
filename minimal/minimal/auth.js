@@ -171,5 +171,8 @@ document.getElementById("list").querySelectorAll("tbody tr td:nth-child(2)").for
 })
 
 document.getElementById("list").querySelectorAll("tbody tr").forEach(elt => {
-  elt.append(htmlToElement('<td class="bin"><a class="icon-bin" onclick="bin(\'' + elt.querySelectorAll("td a")[0].innerText + '\'); return false;"></a></td>'))
+  if (! elt.querySelectorAll("td")[0].classList.contains('parent'))
+  {
+    elt.append(htmlToElement('<td class="bin"><a class="icon-bin" onclick="bin(\'' + elt.querySelectorAll("td a")[0].innerText + '\'); return false;"></a></td>'))
+  };
 })
