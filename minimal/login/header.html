@@ -18,37 +18,38 @@
         <link rel="apple-touch-icon-precomposed" href="/minimal/img/ios-desktop.png">
 
         <link rel="shortcut icon" href="/minimal/img/favicon.png">
-        <link rel="stylesheet" href="/minimal/login/font.css">
         <link rel="stylesheet" href="/minimal/login/login.css">
+        <link rel="stylesheet" href="/minimal/siimple.min.css">
  
     </head>
 
     <body>
-        <div id="header"><h1>WebDav</h1></div>
-        <div id="login">
-            <form action="" onsubmit="return false;" id="form-login">
-                <div class="input-container">
-                    <span class="wrapper icon-user"><input type="text" placeholder="User" id="userText"></span>
+        
+        <div class="siimple-content siimple-content--extra-small">
+            <div class="siimple--px-5 siimple--py-5">
+                <div class="siimple-h2 siimple--text-normal siimple--mb-1" align="center">
+                    WebDav
                 </div>
-                <div class="space"></div>
-                <div class="input-container">
-                    <span class="wrapper icon-password"><input type="password" placeholder="Password" id="passwordText"></span>
+                <div class="siimple-field">
+                    <div class="siimple-field-label icon-user">Your login</div>
+                    <input id="user" type="email" class="siimple-input siimple-input--fluid" placeholder="you">
                 </div>
-                <div class="space"></div>
-                <div id="error" class="hidden">User or Password is wrong</div>
-            </form>
+                <div class="siimple-field">
+                    <div class="siimple-field-label icon-password">Your password</div>
+                    <input id="password" type="password" class="siimple-input siimple-input--fluid" placeholder="password">
+                </div>
+                <div id="error" class="siimple-tip siimple-tip--error siimple-tip--exclamation  siimple--color-error siimple--bg-white hidden">
+                    User or Password is wrong
+                </div>
+                <div class="siimple-field">
+                    <div class="siimple-btn siimple-btn--primary siimple-btn--fluid siimple--text-bold" onclick="validForm()">
+                        Login
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="footer">
-            <hr>
-            <table>
-                <thead>
-                    <tr>
-                        <th align="left"></th>
-                        <th align="center">by <a href="https://github.com/fraoustin/webdav-minimal">Webdav Minimal</a></th>
-                        <th align="right"></th>
-                    </tr>
-                </thead>
-            </table>
+        <div id="footer" class="siimple-footer" align="center">
+            by <a href="https://github.com/fraoustin/webdav-minimal">Webdav Minimal</a>
         </div>
-        <div id="original_fancyindex">
+        <div id="original_fancyindex" class="hidden">
         

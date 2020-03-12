@@ -18,16 +18,24 @@
         <link rel="apple-touch-icon-precomposed" href="/minimal/img/ios-desktop.png">
 
         <link rel="shortcut icon" href="/minimal/img/favicon.png">
-        <link rel="stylesheet" href="/minimal/minimal/font.css">
         <link rel="stylesheet" href="/minimal/minimal/auth.css">
+        <link rel="stylesheet" href="/minimal/siimple.min.css">
  
     </head>
 
     <body>
-        <a id="logout-btn" class="btn icon-switch" href="" onclick="logOut(); return false;"></a>
-        <a id="upload-btn" class="btn icon-cloud-upload" href="" onclick="loadUpload(); return false;"></a>
-        <a id="mkdir-btn" class="btn icon-folder-plus" href="" onclick="mkdir(); return false;"></a>
-        <a id="del-btn" class="btn icon-bin" href="" onclick="bin(); return false;"></a>
+        
+    <div class="siimple-navbar siimple-navbar--fluid siimple-navbar--primary">
+        <div class="siimple-navbar-title">Admin panel</div>
+        <div class="siimple--float-right">
+            <div class="siimple-btn icon-bin hidden" onclick="bins(); return false;"></div>
+            <div class="siimple-btn icon-cloud-upload" href="" onclick="loadUpload(); return false;"></div>
+            <div class="siimple-btn icon-folder-plus" onclick="mkdir(); return false;"></div>
+            <div class="siimple-btn icon-switch" onclick="logOut(); return false;"></div>
+        </div>
+    </div>
+    <div class="siimple-navbar"></div>
+    <div class="siimple-content--fluid">
         <input class="hidden" type="file" id="nameFile" onchange="upload()"/>
         <div id="original_fancyindex">
         

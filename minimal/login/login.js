@@ -79,6 +79,9 @@ function checkAuth(){
   }
 }
 
+function validForm(){
+  setLogIn(document.getElementById('user').value, document.getElementById('password').value);
+}
 
 /* load page */
 var params = params(),
@@ -87,11 +90,11 @@ if (action == "true") {
   document.getElementById('error').classList.remove('hidden');
 };
 
-var passwordText = document.getElementById("passwordText");
-passwordText.addEventListener("keydown", function (e) {
+var passwordInput = document.getElementById("password");
+passwordInput.addEventListener("keydown", function (e) {
   if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-    if ( document.getElementById('passwordText').value.length > 0 && document.getElementById('userText').value.length > 0) {
-      setLogIn(document.getElementById('userText').value, document.getElementById('passwordText').value);
+    if ( document.getElementById('password').value.length > 0 && document.getElementById('user').value.length > 0) {
+      setLogIn(document.getElementById('user').value, document.getElementById('password').value);
     }
   };
 });
