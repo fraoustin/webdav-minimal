@@ -112,23 +112,22 @@ function bins(){
   document.querySelectorAll("tr.selected input").forEach(elt => {
     bin(elt.getAttribute('id'))
   })
-  location.reload()
+  //location.reload()
 }
 
 function bin(name){
-  console.log(name)
   var url = window.location.protocol + '//' + window.location.host+window.location.pathname;
   var fs = new WebDAV.Fs(url);
   if (name == undefined){
     var name = prompt("Please enter name of element for delete", "Name");
   }
-  document.querySelectorAll("td.dir a").forEach(elt => {
+  document.querySelectorAll("tr.dir a").forEach(elt => {
     if (elt.innerText == name) {
       console.log("del dir " + name)
       fs.dir(name).rm()
     }
   })
-  document.querySelectorAll("td.file a").forEach(elt => {
+  document.querySelectorAll("tr.file a").forEach(elt => {
     if (elt.innerText == name) {
       console.log("del file " + name)
       fs.file(name).rm()
