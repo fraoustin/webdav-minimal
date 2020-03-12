@@ -1,5 +1,22 @@
+FROM debian as builder
+LABEL maintainer="Frederic Aoustin <fraoustin@gmail.com>"
+
+RUN apt-get update && apt-get install -y \
+        minify \
+    && rm -rf /var/lib/apt/lists/* 
+
+RUN mkdir /theme
+RUN mkdir /theme/minimal
+COPY ./minimal/ /theme/minimal/
+WORKDIR /theme/minimal/login
+RUN minify -o login.css login.css
+RUN minify -o login.js login.js
+WORKDIR /theme/minimal/minimal
+RUN minify -o auth.js auth.js
+RUN minify -o auth.css auth.css
+RUN minify -o webdav.js webdav.js
+
 FROM nginx:1.17
-LABEL maintainer "fraoustin@gmail.com"
 
 ENV SET_CONTAINER_TIMEZONE false 
 ENV CONTAINER_TIMEZONE "" 
@@ -35,7 +52,8 @@ RUN chmod +x /usr/bin/rmauth
 RUN mkdir /theme
 RUN mkdir /theme/minimal
 WORKDIR /theme/minimal
-COPY ./minimal/ /theme/minimal/
+COPY --from=builder /theme/minimal /theme/minimal
+#COPY ./minimal/ /theme/minimal/
 
 RUN mkdir /login
 RUN mkdir /share

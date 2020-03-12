@@ -1,17 +1,7 @@
-body {
-    font-family: Livvic;
-    color: rgb(17, 17, 17);
+.hidden {
+    display: none !important;
 }
 
-#original_fancyindex {
-    display: none;
-}
-
-
-#form-login, #header h1, #error {
-    width: 300px;
-    margin: auto;
-}
 
 #footer {
     margin: auto;
@@ -19,24 +9,14 @@ body {
     right: 5%;
     position: fixed;
     width: 90%;
-}
-
-#header {
-    margin: 30px;
-    text-align: center;
-}
-
-input#userText, input#passwordText {
-    font-family: Livvic;
-    font-size: 1.2em;
-    text-align: left;
-    border: none;
-    width: calc(100% - 20px);
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+    border-top: 1px solid gray;
 }
 
 @font-face{
     font-family:icomoonlogin;
-    src:url(font/icomoonlogin.woff) format('woff');
+    src:url(../font/icomoonlogin.woff) format('woff');
     font-weight:400;
     font-style:normal
 }
@@ -53,44 +33,6 @@ input#userText, input#passwordText {
     position: relative;
     left: -5px;
     content: "\e98d";
-}
-
-.space {
-    height: 20px;
-}
-
-input, input:focus, input:-webkit-autofill {
-    outline: none;
-    background-color: white !important;
-    -webkit-box-shadow: 0 0 0 1000px white inset !important;
-}
-
-#footer table {
-    width: 100%;
-}
-
-#footer hr {
-    background: #ccc;
-    height: 1px;
-    border: 0;
-    max-width: 1230px;
-    text-align: center;
-}
-
-#footer hr {
-    margin: 1em auto;
-}
-
-#footer th {
-    font-weight: unset;
-}
-
-.hidden {
-    display: none;
-}
-
-#error {
-    color: red;
 }
 
 a {

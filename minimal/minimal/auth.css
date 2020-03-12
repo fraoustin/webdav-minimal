@@ -1,24 +1,83 @@
-body {
-    font-family: Livvic;
-    color: rgb(17, 17, 17);
-}
-
 #original_fancyindex {
     margin: auto;
     width: calc(100% - 110px);
 }
 
-#list {
-    width: 100%;
+.hidden {
+    display: none !important;
 }
 
-.hidden {
-    display: none;
+a {
+    text-decoration: none;
+    color: rgb(17, 17, 17);
 }
+
+
+@media screen and (max-width: 600px) {
+    #list tr td:nth-child(3), #list tr td:nth-child(4), #list th:nth-child(3), #list th:nth-child(4){
+        display: none
+    }
+    #list tr td:nth-child(1){
+        width: 1%;
+    }
+    #original_fancyindex {
+        margin: 10px;
+    }
+}
+
+
+/* manage checkbox */
+.siimple-checkbox label {
+    background: unset !important;
+}
+.siimple-checkbox input[type=checkbox]:checked+label {
+    background-color: #4e91e4 !important;
+}
+
+tr.file .siimple-checkbox input[type=checkbox]:not(:checked)+label:after {
+    opacity: 1;
+    font-family: 'icomoonauth';
+    content: "\e922";
+    transform:unset;
+    top: unset;
+    left: unset;
+    border: unset;
+}
+
+tr.dir .siimple-checkbox input[type=checkbox]:not(:checked)+label:after {
+    opacity: 1;
+    font-family: 'icomoonauth';
+    content: "\e92f";
+    transform:unset;
+    top: unset;
+    left: unset;
+    border: unset;
+}
+
+.parent td:nth-child(1):after {
+    font-family: 'icomoonauth';
+    position: relative;
+    content: "\e934";
+    color: lightgray;
+    margin-left: 10px;
+}
+
+/* navbar */
+.siimple-navbar--primary {
+    position: fixed;
+}
+.siimple-navbar--primary .siimple-btn:hover {
+    color: #4e91e4;
+}
+.siimple-navbar--primary .siimple-btn {
+    font-size: 20px;
+}
+
+/* icon */
 
 @font-face{
     font-family:icomoonauth;
-    src:url(font/icomoonauth.woff) format('woff');
+    src:url(../font/icomoonauth.woff) format('woff');
     font-weight:400;
     font-style:normal
 }
@@ -50,51 +109,26 @@ body {
     content: "\e9ac";
 }
 
-a.btn {
-    border: 1px solid #ccc;
-    background: white;
-    padding: .5rem 1rem;
-    margin: 0;
-    -webkit-border-radius: .25em;
-    -moz-border-radius: .25em;
-    border-radius: .25em;
-    text-decoration: none;
-    position: fixed;
-    right: 10px;
-}
-
-a.icon-cloud-upload {
-    bottom: 20px;
-}
-
-a.icon-folder-plus {
-    bottom: 70px;
-}
-
-a.icon-bin {
-    bottom: 120px;
-}
-
-
-
-a {
-    text-decoration: none;
-    color: rgb(17, 17, 17);
-}
-
-#list tr td:nth-child(2), #list tr td:nth-child(3), #list th:nth-child(2), #list th:nth-child(3){
+/* table */
+#list tr td:nth-child(3),
+#list tr td:nth-child(4),
+#list th:nth-child(3),
+#list th:nth-child(4){
     text-align: right;
 }
 
-#original_fancyindex::first-line {
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    position: fixed;
+#list th:nth-child(2){
+    text-align: left;
+}
+
+table {border-collapse: collapse; border-spacing: 0;}
+
+thead th {border-bottom: 1px solid lightgray;}
+table#list thead tr th {
+    padding-bottom: 10px;
+}
+table#list tbody tr:nth-child(1) td {
+    padding-top: 15px;
 }
 
 #list {
@@ -102,68 +136,11 @@ a {
     font-size: 1.2em;
 }
 
-#list tr {
-    margin-top: 5px;
-}
-
 #list td {
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.dir:before {
-    font-family: 'icomoonauth';
-    position: relative;
-    left: -5px;
-    content: "\e92f";
-}
-
-.file:before {
-    font-family: 'icomoonauth';
-    position: relative;
-    left: -5px;
-    content: "\e922";
-}
-
-.parent:before {
-    font-family: 'icomoonauth';
-    position: relative;
-    left: -5px;
-    content: "\e934";
-    color: lightgray;
-}
-
-#list tr:hover td {
+#list tr:hover td, #list tr.selected td {
     font-weight:bold
 } 
-
-#list tr:hover .icon-bin {
-    display: unset;
-}
-
-#list tr .icon-bin {
-    display:none;
-}
-
-#list tr td.bin {
-    min-width: 40px;
-}
-
-#del-btn {
-    display: none
-}
-
-
-
-
-@media screen and (max-width: 600px) {
-    #list tr td:nth-child(2), #list tr td:nth-child(3), #list th:nth-child(2), #list th:nth-child(3){
-        display: none
-    }
-    #original_fancyindex {
-        margin: 10px;
-    }
-    #del-btn {
-        display: unset;
-    }
-}
