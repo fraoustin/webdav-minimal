@@ -77,6 +77,8 @@ run image mywebdav
 
     docker run -d -e "CONTAINER_TIMEZONE=Europe/Paris" -e DAVUSER=myuser" -e "DAVPASSWORD=mypassword" -v <localpath>:/share --name test -p 80:80 mywebdav
 
+You can add 5 users (DAVUSER1-5 / DAVPASSWORD1-5)
+
 
 ## For developer
 
