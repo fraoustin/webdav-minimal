@@ -16,7 +16,7 @@ RUN minify -o auth.js auth.js
 RUN minify -o auth.css auth.css
 RUN minify -o webdav.js webdav.js
 
-FROM nginx:1.17
+FROM nginx:1.19
 
 ENV SET_CONTAINER_TIMEZONE false 
 ENV CONTAINER_TIMEZONE "" 

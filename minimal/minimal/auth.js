@@ -112,7 +112,7 @@ function bins(){
   document.querySelectorAll("tr.selected input").forEach(elt => {
     bin(elt.getAttribute('id'))
   })
-  //location.reload()
+  location.reload()
 }
 
 function bin(name){
