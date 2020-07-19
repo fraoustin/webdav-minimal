@@ -112,10 +112,11 @@ function bins(){
   document.querySelectorAll("tr.selected input").forEach(elt => {
     bin(elt.getAttribute('id'))
   })
-  location.reload()
+  location.reload();
 }
 
 function bin(name){
+  console.log("bin " + name);
   var url = window.location.protocol + '//' + window.location.host+window.location.pathname;
   var fs = new WebDAV.Fs(url);
   if (name == undefined){
